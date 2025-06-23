@@ -124,4 +124,79 @@ This will execute a sample scenario defined at the bottom of `dungeon_guardian.p
 
 For more details, see the code and comments in `dungeon_guardian.py` and `interactive_runner.py`.
 
+## 🚀 Output
+
+🔧 RUNNING CUSTOM SCENARIO
+🏰 DUNGEON GUARDIAN SIMULATION STARTED 🏰
+============================================================
+
+🌍 WORLD STATE:
+   ❤️  Health: 45%
+   ⚡ Stamina: 12
+   🧪 Potions: 1 (Has)
+   💎 Treasure Threat: high
+   👹 Enemy Nearby: Yes
+   🛡️  Safe Zone: No
+   📞 Backup Available: Yes
+
+📍 STEP 1
+----------------------------------------
+🎯 GOAL: EliminateThreat
+💭 REASONING: Treasure is under high threat and enemy is nearby. I have healing potions available if needed. I must eliminate the threat immediately.
+📋 PLAN: CallBackup
+⚡ EXECUTING: CallBackup
+💭 WHY: I'm calling backup because I'm overwhelmed - health: 45%, enemy nearby: True. This helps eliminate the current threat.
+✅ SUCCESS: Backup called successfully! Threats neutralized
+
+🌍 WORLD STATE:
+   ❤️  Health: 45%
+   ⚡ Stamina: 12
+   🧪 Potions: 1 (Has)
+   💎 Treasure Threat: medium
+   👹 Enemy Nearby: No
+   🛡️  Safe Zone: No
+   📞 Backup Available: No
+
+📍 STEP 2
+----------------------------------------
+🎯 GOAL: ProtectTreasure
+💭 REASONING: Treasure threat level is medium. I'm exposed and vulnerable to attacks. I need to defend our valuable assets.
+📋 PLAN: DefendTreasure
+⚡ EXECUTING: DefendTreasure
+💭 WHY: I'm defending the treasure because the threat level is medium and it's my primary duty. This directly protects our treasure.
+❌ FAILED: Overwhelmed by multiple attackers
+🤔 REFLECTION: Defense failed: Overwhelmed by multiple attackers. I need better positioning or should have eliminated threats proactively. Next time, I'll assess the situation more carefully and have contingency plans ready.
+
+🌍 WORLD STATE:
+   ❤️  Health: 45%
+   ⚡ Stamina: 12
+   🧪 Potions: 1 (Has)
+   💎 Treasure Threat: medium
+   👹 Enemy Nearby: No
+   🛡️  Safe Zone: No
+   📞 Backup Available: No
+
+📍 STEP 3
+----------------------------------------
+🎯 GOAL: ProtectTreasure
+💭 REASONING: Treasure threat level is medium. I'm exposed and vulnerable to attacks. I need to defend our valuable assets.
+📋 PLAN: DefendTreasure
+⚡ EXECUTING: DefendTreasure
+💭 WHY: I'm defending the treasure because the threat level is medium and it's my primary duty. This directly protects our treasure.
+✅ SUCCESS: Treasure successfully defended
+
+🌍 WORLD STATE:
+   ❤️  Health: 45%
+   ⚡ Stamina: 9
+   🧪 Potions: 1 (Has)
+   💎 Treasure Threat: low
+   👹 Enemy Nearby: No
+   🛡️  Safe Zone: No
+   📞 Backup Available: No
+
+📍 STEP 4
+----------------------------------------
+🎯 GOAL: PrepareForBattle
+💭 REASONING: No immediate threats detected. I need to gather resources and restore my strength. I should prepare for potential future encounters.
+
 ## 🚀
