@@ -10,6 +10,7 @@ from dataclasses import dataclass, asdict
 from enum import Enum
 import random
 import time
+from itertools import count
 
 # ==================== WORLD STATE & ENUMS ====================
 
@@ -163,6 +164,7 @@ class GOAPPlanner:
     
     def __init__(self):
         self.actions = self._define_actions()
+        self._counter = count()  # Unique sequence count for heapq tiebreaker
     
     def _define_actions(self) -> List[Action]:
         """Define all available actions with preconditions and effects"""
@@ -208,11 +210,11 @@ class GOAPPlanner:
     def plan(self, start_state: WorldState, goal_conditions: Dict[str, Any]) -> List[ActionType]:
         """Create a plan using A* algorithm"""
         
-        open_list = [(0, 0, start_state, [])]  # (f_score, g_score, state, actions)
+        open_list = [(0, 0, next(self._counter), start_state, [])]  # (f_score, g_score, tiebreaker, state, actions)
         closed_set = set()
         
         while open_list:
-            f_score, g_score, current_state, actions = heapq.heappop(open_list)
+            f_score, g_score, _, current_state, actions = heapq.heappop(open_list)
             
             state_key = self._state_to_key(current_state)
             if state_key in closed_set:
@@ -231,7 +233,7 @@ class GOAPPlanner:
                     new_g_score = g_score + action.cost
                     new_f_score = new_g_score + self._heuristic(new_state, goal_conditions)
                     
-                    heapq.heappush(open_list, (new_f_score, new_g_score, new_state, new_actions))
+                    heapq.heappush(open_list, (new_f_score, new_g_score, next(self._counter), new_state, new_actions))
         
         return []  # No plan found
     

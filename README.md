@@ -83,4 +83,45 @@ The system includes 4 comprehensive test scenarios:
 - Health: 60%, Enemy present, No healing resources
 - **Expected**: Calculated combat with fallback plans
 
+## 🧠 How LLM-Style Reasoning is Simulated
+
+The Dungeon Guardian simulates LLM-style reasoning through its **Cognitive Layer**:
+- **Goal Generation**: The agent analyzes the current world state and generates a goal, providing natural language reasoning for its choice (e.g., "Treasure is under high threat and enemy is nearby. I must eliminate the threat immediately.").
+- **Action Justification**: Before each action, the agent explains in natural language why it chose that action, referencing its current state and goal.
+- **Reflection on Failure**: If an action fails, the agent reflects on the failure, explains why it happened, and suggests how it will adapt in the future.
+- **Memory**: The agent stores past failures and uses them to inform future decisions.
+
+This approach mimics the way a large language model might reason, justify, and adapt, but is implemented with traditional Python logic and templates for transparency and reproducibility.
+
+## 🚀 How to Run
+
+### Requirements
+- Python 3.7+
+- No external dependencies required (standard library only)
+
+### Run the Interactive Simulator
+This is the recommended way to explore scenarios and interact with the agent:
+
+```bash
+python interactive_runner.py
+```
+
+You will be presented with a menu to:
+- Run all built-in test scenarios
+- Create and run your own custom scenario
+- Try a quick demo
+
+### Run a Custom Scenario Directly
+You can also run the main agent with a hardcoded scenario by running:
+
+```bash
+python dungeon_guardian.py
+```
+
+This will execute a sample scenario defined at the bottom of `dungeon_guardian.py`.
+
+---
+
+For more details, see the code and comments in `dungeon_guardian.py` and `interactive_runner.py`.
+
 ## 🚀
